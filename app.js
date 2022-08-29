@@ -4,7 +4,7 @@ const tasks = require('./routes/tasks')
 
 //routes
 app.get('/hello', (req, res) => {
-    res.send('Task Manager App')
+    res.send('Task Manager App - Hello')
 })
 
 
