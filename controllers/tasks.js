@@ -31,9 +31,6 @@ const getTask = async (req, res) => {
     }
 }
 
-const updateTask = (req, res) => {
-    res.send('update single task')
-}
 
 const deleteTask = async (req, res) => {
     try {
@@ -48,6 +45,14 @@ const deleteTask = async (req, res) => {
     }
 }
 
+const updateTask = async (req, res) => {
+    try {
+        const {id:taskID} = req.params
+        res.status(200).json({id:taskID, data: req.body})
+    } catch (error) {
+        res.status(404).send('error')
+    }
+}
 module.exports = {
     getAllTasks, createTask, getTask, updateTask, deleteTask
 }
